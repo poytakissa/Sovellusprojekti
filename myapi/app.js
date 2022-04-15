@@ -25,4 +25,8 @@ app.use(cors());
 
 const bookRouter = require('./routes/book');
 app.use('/book', bookRouter);
+const userRouter = require('./routes/user');
+app.use('/user', userRouter);
+const loginRouter = require('./routes/login');
+app.use('/login', loginRouter);
 module.exports = app;
