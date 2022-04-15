@@ -17,4 +17,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+const helmet = require('helmet');
+const cors = require('cors');
+
+app.use(helmet());
+app.use(cors());
+
+const bookRouter = require('./routes/book');
+app.use('/book', bookRouter);
 module.exports = app;
