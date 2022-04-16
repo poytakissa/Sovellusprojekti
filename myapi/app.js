@@ -29,4 +29,6 @@ const userRouter = require('./routes/user');
 app.use('/user', userRouter);
 const loginRouter = require('./routes/login');
 app.use('/login', loginRouter);
+const carRouter = require('./routes/car');
+app.use('/car', carRouter);
 module.exports = app;

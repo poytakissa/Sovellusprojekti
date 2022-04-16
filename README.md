@@ -1,47 +1,29 @@
-# Sovellusprojekti
-eka books testi
--- MySQL Workbench Forward Engineering
+CREATE DATABASE netdb;
+CREATE USER 'netuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'netpass';
+GRANT ALL on netdb.* to 'netuser'@'localhost';
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+USE netdb;
 
--- -----------------------------------------------------
--- Schema netdb
--- -----------------------------------------------------
+CREATE TABLE book(
+id_book INT primary key auto_increment,
+name VARCHAR(255),
+author VARCHAR(255),
+isbn VARCHAR(20)
+);
 
--- -----------------------------------------------------
--- Schema netdb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `netdb` DEFAULT CHARACTER SET utf8 ;
-USE `netdb` ;
+INSERT INTO book(name,author,isbn) VALUES('PHP Basic','Bob Jones','123-456-789-111-x');
+INSERT INTO book(name,author,isbn) VALUES('Statistics','Lisa Smith','222-333-444-555-y');
 
--- -----------------------------------------------------
--- Table `netdb`.`books`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `netdb`.`books` (
-  `id_books` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NULL,
-  `author` VARCHAR(255) NULL,
-  `isbn` VARCHAR(20) NULL,
-  PRIMARY KEY (`id_books`))
-ENGINE = InnoDB;
+CREATE TABLE car (
+  id_car INT primary key auto_increment,
+  brand varchar(255),
+  model varchar(255) 
+);
 
-
--- -----------------------------------------------------
--- Table `netdb`.`user_table`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `netdb`.`user_table` (
-  `id_user` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(20) NULL,
-  `password` VARCHAR(255) NULL,
-  PRIMARY KEY (`id_user`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
-ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
+INSERT INTO car(brand,model) VALUES('Citroen', 'Xantia');
+INSERT INTO car(brand,model) VALUES('Peugeot', '307');
+INSERT INTO car(brand,model) VALUES('Hyundai', 'Coupe');
+INSERT INTO car(brand,model) VALUES('Renaul', 'Megane');
+INSERT INTO car(brand,model) VALUES('Opel', 'Vectra');
+INSERT INTO car(brand,model) VALUES('Ford', 'Transit');
+INSERT INTO car(brand,model) VALUES('Tesla', 'Model X');
