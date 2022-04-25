@@ -22,11 +22,18 @@ private slots:
     void GetCarSlot(QNetworkReply *reply);
 
     void on_GetCars_clicked();
+    void updateCarSlot (QNetworkReply *reply);
+    void addCarSlot (QNetworkReply *reply);
+    void on_btngetcar_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+    QNetworkAccessManager *postManager;
+    QNetworkAccessManager *putManager;
 };
 #endif // MAINWINDOW_H
