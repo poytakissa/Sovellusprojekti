@@ -30,8 +30,8 @@
    <widget class="QTextEdit" name="CarTable">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>210</y>
+      <x>170</x>
+      <y>300</y>
       <width>421</width>
       <height>221</height>
      </rect>
@@ -61,6 +61,19 @@
     </property>
     <property name="text">
      <string>Update car ID 8</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeleteCar">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>150</y>
+      <width>301</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete Car ID 8</string>
     </property>
    </widget>
   </widget>

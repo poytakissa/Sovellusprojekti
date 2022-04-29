@@ -24,9 +24,13 @@ private slots:
     void on_GetCars_clicked();
     void updateCarSlot (QNetworkReply *reply);
     void addCarSlot (QNetworkReply *reply);
+    void DeleteCarSlot(QNetworkReply *reply);
     void on_btngetcar_clicked();
 
     void on_pushButton_clicked();
+
+    void on_DeleteCar_clicked();
+
 
 private:
     Ui::MainWindow *ui;
@@ -35,5 +39,6 @@ private:
     QByteArray response_data;
     QNetworkAccessManager *postManager;
     QNetworkAccessManager *putManager;
+    QNetworkAccessManager *deleteResource;
 };
 #endif // MAINWINDOW_H
