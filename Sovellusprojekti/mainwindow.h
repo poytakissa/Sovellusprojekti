@@ -27,6 +27,8 @@ private slots:
     void DeleteCarSlot(QNetworkReply *reply);
     void on_btngetcar_clicked();
 
+
+
     void on_pushButton_clicked();
 
     void on_DeleteCar_clicked();
